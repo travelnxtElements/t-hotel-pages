@@ -1,47 +1,56 @@
 {
-  "name": "t-hotel-pages",
-  "version": "0.0.0",
-  "authors": [
-    "Sounak Pal <talk2sounak@gmail.com>"
-  ],
-  "description": "",
-  "main": "",
-  "moduleType": [],
-  "keywords": [
-    "Polymer",
-    "Web",
-    "Components"
-  ],
-  "homepage": "",
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "polymer": "Polymer/polymer#^1.0.0",
-    "webcomponentsjs": "^0.7.21",
-    "t-notify": "atomelements/t-notify#master",
-    "t-shared-components": "atomelements/t-shared-components#master",
-    "t-hotel-search": "travelnxtElements/t-hotel-search#master",
-    "t-sessionstorage": "travelnxtElements/t-sessionstorage#master",
-    "t-loader": "atomelements/t-loader#master",
-    "t-mystique-auth": "travelnxtelements/t-mystique-auth#master",
-    "paper-ripple": "PolymerElements/paper-ripple#^1.0.5"
-  },
-  "devDependencies": {
-    "web-component-tester": "*",
-    "webcomponentsjs": "~0.7.14",
-    "iron-component-page": "PolymerElements/iron-component-page#~1.0.6"
-  },
-  "resolutions": {
-    "t-shared-components": "master",
-    "paper-styles": "^1.0.11",
-    "t-loader": "master",
-    "t-notify": "master",
-    "paper-ripple": "^1.0.5"
-  }
+    "name": "t-hotel-pages",
+    "version": "0.0.0",
+    "authors": [
+        "Sounak Pal <talk2sounak@gmail.com>"
+    ],
+    "description": "",
+    "main": "",
+    "moduleType": [],
+    "keywords": [
+        "Polymer",
+        "Web",
+        "Components"
+    ],
+    "homepage": "",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "polymer": "Polymer/polymer#^1.0.0",
+        "webcomponentsjs": "^0.7.21",
+        "t-notify": "atomelements/t-notify#master",
+        "t-shared-components": "atomelements/t-shared-components#master",
+        "t-hotel-search": "travelnxtElements/t-hotel-search#master",
+        "t-sessionstorage": "travelnxtElements/t-sessionstorage#master",
+        "t-loader": "atomelements/t-loader#master",
+        "t-mystique-auth": "travelnxtelements/t-mystique-auth#master",
+        "t-header": "travelnxtElements/t-header#master",
+        "t-list": "atomelements/t-list#master",
+        "t-input": "atomelements/t-input#master",
+        "t-button": "atomelements/t-button#master",
+        "t-search-overlay": "travelnxtElements/t-search-overlay#master",
+        "t-hotel-result-item": "travelnxtElements/t-hotel-result-item#master",
+        "paper-ripple": "PolymerElements/paper-ripple#^1.0.5"
+    },
+    "devDependencies": {
+        "web-component-tester": "*",
+        "webcomponentsjs": "~0.7.14",
+        "iron-component-page": "PolymerElements/iron-component-page#~1.0.6"
+    },
+    "resolutions": {
+        "t-shared-components": "master",
+        "paper-styles": "^1.0.11",
+        "t-loader": "master",
+        "t-header": "master",
+        "t-button": "master",
+        "t-input": "master",
+        "t-notify": "master",
+        "paper-ripple": "^1.0.5"
+    }
 }
