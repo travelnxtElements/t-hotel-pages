@@ -8,6 +8,7 @@
     <title>t-hotel-pages demo</title>
     <link rel="import" href="../../t-mystique-auth/t-mystique-auth.html">
     <link rel="import" href="../t-hotel-home-page.html">
+    <link rel="import" href="../t-hotel-results-page.html">
     <link rel="import" href="../../t-shared-components/theme.html">
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
 </head>
@@ -25,11 +26,17 @@
 	        auth-token="{{token.authenticationToken}}"
 	        on-search-success="demoSuccessFunction"
         ></t-hotel-home-page>
+
+        <t-hotel-results-page
+            api-base-url="http://qa-mystiquecode.tavisca.com/" 
+            auth-token="{{token.authenticationToken}}"
+            search-id="[[searchId]]"></t-hotel-results-page>
     </template>
     <script>
     	var app = document.querySelector('#app');
     	app.demoSuccessFunction = function (argument) {
-    		console.log(argument);
+            app.searchId = argument.detail;
+    		console.log(argument.detail);
     	}
     </script>
 </body>
