@@ -9,15 +9,14 @@
 <link rel="import" href="../t-hotel-result-item/t-hotel-itinerary-item.html">
 <link rel="import" href="../t-sessionstorage/t-sessionstorage.html" />
 <!--
-    `<t-hotel-home-page>` is a polymer component that generates page component handling all required resources of Hotel search home page
+    `<t-hotel-results-page>` is a polymer component that generates results page component handling all required resources of Hotel result page
 
 
     Basic usage
-    `<t-hotel-home-page 
+    `<t-hotel-results-page
             api-base-url="http://qa-mystiquecode.tavisca.com/" 
             auth-token="{{token.authenticationToken}}"
-            on-search-success="demoSuccessFunction"
-        ></t-hotel-home-page>`
+            search-id="[[searchId]]"></t-hotel-results-page>`
 -->
 <dom-module id="t-hotel-results-page">
     <template>
@@ -77,6 +76,20 @@ Polymer({
      * @event request
      */
 
+
+    /**
+     * Fired when clicked on the header left click
+     *
+     * @event header-left-click
+     */
+
+
+    /**
+     * Fired when clicked on the header right click
+     *
+     * @event header-right-click
+     */
+
     properties: {
 
         /*The session api Url format to be provided*/
@@ -99,6 +112,10 @@ Polymer({
     attached: function() {
         this._setUpPrerequisites();
         this._bindTemplate();
+    },
+
+    _headerLeftClick: function(){
+        this.fire('header-left-click',  {bubbles: false});
     },
 
     _setUpPrerequisites: function(authToken,apiBaseUrl,searchId) {
@@ -153,7 +170,7 @@ Polymer({
     },
 
     _mapClick: function() {
-        //window.location = Eva.mapPage + '?sid=' + Eva.searchId;
+        this.fire('header-right-click',  {bubbles: false});
     },
 
     _singleItemSuccess: function(e) {
@@ -200,7 +217,7 @@ Polymer({
     },
     onItinerarySaved: function() {
 
-        this.fire('result-select-success', {this.itineraryInfoElem.value.id}, {bubbles: false});
+        this.fire('result-select-success', this.$.itineraryInfoElem.value.id , {bubbles: false});
         //window.location = Eva.detailsPage + '?sid=' + Eva.searchId + '&hid=' + document.getElementById('itineraryInfoElem').value.id;
     }
 
