@@ -9,6 +9,7 @@
     <link rel="import" href="../../t-mystique-auth/t-mystique-auth.html">
     <link rel="import" href="../t-hotel-home-page.html">
     <link rel="import" href="../t-hotel-results-page.html">
+    <link rel="import" href="../t-hotel-details-page.html">
     <link rel="import" href="../../t-shared-components/theme.html">
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
 </head>
@@ -22,22 +23,34 @@
 	        token-response="{{token}}">
         </t-mystique-auth>
         <t-hotel-home-page 
-	        api-base-url="http://qa-mystiquecode.tavisca.com/" 
+	        api-base-url="[[apiBaseUrl]]" 
 	        auth-token="{{token.authenticationToken}}"
-	        on-search-success="demoSuccessFunction"
+	        on-search-success="searchSuccess"
         ></t-hotel-home-page>
 
         <t-hotel-results-page
-            api-base-url="http://qa-mystiquecode.tavisca.com/" 
+            api-base-url="[[apiBaseUrl]]" 
             auth-token="{{token.authenticationToken}}"
-            search-id="[[searchId]]"></t-hotel-results-page>
+            search-id="[[searchId]]"
+            on-result-select-success="resultsPageSuccess"></t-hotel-results-page>
+
+        <t-hotel-details-page
+            api-base-url="[[apiBaseUrl]]" 
+            auth-token="{{token.authenticationToken}}"
+            search-id="[[searchId]]"
+            hotel-id="[[hotelId]]"></t-hotel-details-page>
+
     </template>
     <script>
     	var app = document.querySelector('#app');
-    	app.demoSuccessFunction = function (argument) {
+        app.apiBaseUrl ="http://qa-mystiquecode.tavisca.com/";
+        app.searchSuccess = function (argument) {
             app.searchId = argument.detail;
     		console.log(argument.detail);
-    	}
+    	};
+        app.resultsPageSuccess = function(argument){
+            app.hotelId = argument.detail;
+        }
     </script>
 </body>
 	
